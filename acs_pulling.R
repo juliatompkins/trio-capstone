@@ -30,6 +30,13 @@ B08119_stl_county = get_acs(geography = "tract", state = "MO", county = "St. Lou
   left_join(acs_20_vars, by = "name")
 
 
+B08301_stl_city = get_acs(geography = "tract", state = "MO", county = "St. Louis city", table = "B08301", cache_table = TRUE) %>%
+  rename(name = variable, location = NAME) %>%
+  left_join(acs_20_vars, by = "name")
+
+
+
+
 block_level_transit_vars = acs_20_vars %>%
   filter(grepl("block group", geography, ignore.case = TRUE)) %>%
   filter(grepl("trans", concept, ignore.case = TRUE))
