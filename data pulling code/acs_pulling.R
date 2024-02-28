@@ -38,3 +38,19 @@ block_level_transit_vars = acs_20_vars %>%
 
 
 
+
+letters = c('B', 'C', 'D', 'E', 'F', 'G', 'H', 'I')
+
+B08105_stl_city = get_acs(geography = "tract", state = "MO", county = "St. Louis city", table = "B08105A", cache_table = TRUE) %>%
+  rename(name = variable, location = NAME) %>%
+  left_join(acs_20_vars, by = "name")
+
+for (letter in letters) {
+  placeholder = get_acs(geography = "tract", state = "MO", county = "St. Louis city", table = paste("B08105", letter, sep = ""), cache_table = TRUE) %>%
+    rename(name = variable, location = NAME) %>%
+    left_join(acs_20_vars, by = "name")
+  B08105_stl_city = rbind(B08105_stl_city, placeholder)
+}
+
+
+
