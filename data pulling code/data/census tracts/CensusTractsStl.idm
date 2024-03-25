@@ -1,0 +1,8 @@
+<OGRMILayerAttrIndex>
+  <MIIDFilename>CensusTractsStl.ind</MIIDFilename>
+  <OGRMIAttrIndex>
+    <FieldIndex>3</FieldIndex>
+    <FieldName>GEOID</FieldName>
+    <IndexIndex>1</IndexIndex>
+  </OGRMIAttrIndex>
+</OGRMILayerAttrIndex>
