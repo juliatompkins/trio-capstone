@@ -156,7 +156,7 @@ our_random_walk = MarkovChain(
     constraints = [population_constraint],
     accept = always_accept, # Accept every proposed plan that meets the population constraints
     initial_state = initial_partition, 
-    total_steps = 300) 
+    total_steps = 100) 
 
 # What ensembles we want to build
 cutedge_ensemble = []
